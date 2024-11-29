@@ -8,12 +8,26 @@ import { BaseService } from '../services/base.service';
 })
 export class PeoplesComponent {
 
-  peoples:any
+  modal:boolean = false;
+
+  peoples:any = []
+
+  edit_people:any = {}
 
   constructor(private base:BaseService){
     this.base.getPeoples().valueChanges().subscribe(
       (res)=> this.peoples=res
     )
+    this.modal = false;
+  }
+
+  openModal(data:any){
+    this.modal = true;
+    this.edit_people = data;
+  }
+
+  closeModal(){
+    this.modal = false;
   }
 
 }
