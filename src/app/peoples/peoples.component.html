@@ -1,0 +1,18 @@
+<div class="grid grid-cols-6 gap-4 my-2 p-4">
+    <div *ngFor="let people of peoples" class="bg-blue-200 rounded-xl overflow-hidden">
+        <div class="w-full h-48 bg-no-repeat bg-cover" style="background-image: url('{{people.cover_image}}');">
+            <!--<img src="{{ people.cover_image }}" alt="" class="w-full h-full">-->
+        </div>
+        <div class="p-4">
+            <div class="grid grid-cols-2 gap-4">
+                <div>{{ people.name }}</div>
+                <div>{{ people.genre }}</div>
+            </div>
+            <div>{{ people.platform }}</div>
+            <div>{{ people.price }}</div>
+        </div>
+        <div class="float-right">
+            <span class="material-icons text-sm p-2">edit</span>
+        </div>
+    </div>
+</div>
